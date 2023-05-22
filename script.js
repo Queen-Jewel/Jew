@@ -1,11 +1,13 @@
 var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
-var li = document.querySelector("li");
+var todoElements = document.querySelectorAll("#todo-item");
 
-function toggleList() {
-    li.classList.toggle("done");
-}
+todoElements.forEach((item) => {
+    item.addEventListener("click", ()=>{
+        item.classList.toggle("done")
+    })
+})
 
 function inputLength() {
     return input.value.length;
